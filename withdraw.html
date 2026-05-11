@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вывод через P2P — Binance</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; color: #1e2329; margin: 0; display: flex; background: #fafafa; }
+        .sidebar { width: 280px; background: #1e2329; color: white; height: 100vh; position: fixed; padding: 20px; box-sizing: border-box; }
+        .sidebar h2 { color: #f3ba2f; font-size: 20px; margin-bottom: 30px; text-transform: uppercase; }
+        .sidebar ul { list-style: none; padding: 0; }
+        .sidebar li { margin-bottom: 15px; }
+        .sidebar a { color: #848e9c; text-decoration: none; font-size: 15px; }
+        .sidebar a:hover { color: #f3ba2f; }
+        .sidebar .active { color: #f3ba2f; font-weight: bold; }
+        
+        .content { margin-left: 280px; padding: 60px; max-width: 900px; background: white; min-height: 100vh; }
+        h1 { font-size: 32px; color: #1e2329; margin-bottom: 20px; }
+        
+        .step-card { background: #ffffff; border: 1px solid #eaecef; border-radius: 16px; padding: 30px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .step-card h3 { margin-top: 0; color: #1e2329; font-size: 22px; }
+        
+        .screenshot { width: 100%; max-width: 500px; border-radius: 12px; margin: 20px 0; border: 1px solid #ddd; display: block; }
+        
+        .p2p-info { background: #fffcf2; border-left: 5px solid #f3ba2f; padding: 20px; border-radius: 4px; margin: 20px 0; }
+        .warning-box { background: #fff5f5; border: 2px solid #ff4d4f; padding: 25px; border-radius: 12px; color: #1e2329; margin-top: 40px; }
+        .warning-box h4 { margin-top: 0; color: #cf1322; text-transform: uppercase; }
+        .highlight { color: #c99400; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>Binance Инструкция</h2>
+    <ul>
+        <li><a href="index.html">1. Регистрация</a></li>
+        <li><a href="security.html">2. Верификация</a></li>
+        <li><a href="deposit.html">3. Получение оплаты</a></li>
+        <li><a href="withdraw.html" class="active">4. Вывод на карту (P2P)</a></li>
+    </ul>
+</div>
+
+<div class="content">
+    <h1>Глава 4. Вывод средств через P2P</h1>
+    
+    <div class="p2p-info">
+        <strong>Что такое P2P-ордер?</strong> Это прямая сделка между двумя людьми. Биржа выступает гарантом: когда вы продаете свои 100$, они блокируются на "эскроу-счете" платформы. Покупатель переводит вам деньги на карту, и только после вашего подтверждения биржа отдает ему криптовалюту.
+    </div>
+
+  <div class="step-card">
+        <h3>Шаг 1. Привязка вашей банковской карты</h3>
+        <p>Прежде чем продавать криптовалюту, вам нужно добавить реквизиты, на которые придут деньги. Это делается в разделе <strong>P2P -> Способы оплаты</strong>. Нажмите "Добавить новый метод" и введите данные своей карты (номер карты и название банка).</p>
+        
+        <img src="img/p2p_main.png" alt="Привязка карты и способы оплаты" class="screenshot">
+
+        <div class="p2p-info">
+            <strong>Важно:</strong> Привязывайте только ту карту, которая оформлена на ваше имя. Имя в банковском приложении должно полностью совпадать с именем, которое вы указывали при верификации на Binance. Если данные будут разными, покупатель может отменить сделку.
+        </div>
+    </div>
+
+    <div class="step-card">
+        <h3>Шаг 2. Создание ордера на продажу</h3>
+        <p>Вводим сумму для продажи (например, 100$). Биржа автоматически покажет, сколько денег вы получите на руки по текущему курсу.</p>
+        <img src="img/p2p_card.png" alt="Создание ордера 100$" class="screenshot">
+    </div>
+
+    <div class="step-card">
+        <h3>Шаг 3. Выбор способа оплаты</h3>
+        <p>Выберите ту карту, которую вы привязали ранее (например, Монобанк или ПриватБанк). Именно на эти реквизиты покупатель будет обязан переслать вам деньги.</p>
+        <img src="img/p2p_sell.png" alt="Выбор банка" class="screenshot">
+    </div>
+
+    <div class="step-card">
+        <h3>Шаг 4. Проверка и публикация</h3>
+        <p>Это финальный экран перед тем, как сделка станет активной. Проверьте сумму и метод оплаты еще раз.</p>
+        <img src="img/p2p_confirm.png" alt="Финальный ордер" class="screenshot">
+    </div>
+
+    <div class="warning-box">
+        <h4>ЗОЛОТОЕ ПРАВИЛО:</h4>
+        <p><strong>Никогда не нажимайте кнопку "Платеж получен", пока не увидите деньги в приложении своего банка.</strong></p>
+        <p>Сценарий всегда один: 
+            <br>1. Ждем уведомление от банковского приложения.
+            <br>2. Проверяем баланс карты вручную.
+            <br>3. Только после этого нажимаем "Подтвердить" на Binance.
+        </p>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пополнение и получение зарплаты — Binance</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; color: #1e2329; margin: 0; display: flex; background: #fafafa; }
+        .sidebar { width: 280px; background: #1e2329; color: white; height: 100vh; position: fixed; padding: 20px; box-sizing: border-box; }
+        .sidebar h2 { color: #f3ba2f; font-size: 20px; margin-bottom: 30px; text-transform: uppercase; }
+        .sidebar ul { list-style: none; padding: 0; }
+        .sidebar li { margin-bottom: 15px; }
+        .sidebar a { color: #848e9c; text-decoration: none; font-size: 15px; }
+        .sidebar a:hover { color: #f3ba2f; }
+        .sidebar .active { color: #f3ba2f; font-weight: bold; }
+        
+        .content { margin-left: 280px; padding: 60px; max-width: 900px; background: white; min-height: 100vh; }
+        h1 { font-size: 32px; color: #1e2329; margin-bottom: 30px; }
+        
+        .step-card { background: #ffffff; border: 1px solid #eaecef; border-radius: 16px; padding: 30px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .step-card h3 { margin-top: 0; color: #1e2329; font-size: 22px; }
+        
+        .network-box { background: #fffcf2; border: 1px solid #f3ba2f; padding: 20px; border-radius: 12px; margin: 20px 0; }
+        .screenshot { width: 100%; max-width: 500px; border-radius: 12px; margin: 25px 0; border: 1px solid #ddd; display: block; }
+        
+        .highlight { color: #c99400; font-weight: bold; }
+        .address-box { background: #f5f5f5; padding: 15px; border-radius: 8px; border: 1px dashed #adb5bd; font-family: monospace; font-size: 14px; color: #212529; }
+    </style>
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>Binance Инструкция</h2>
+    <ul>
+        <li><a href="index.html">1. Регистрация</a></li>
+        <li><a href="security.html">2. Верификация</a></li>
+        <li><a href="deposit.html" class="active">3. Получение оплаты</a></li>
+        <li><a href="withdraw.html">4. Вывод средств</a></li>
+    </ul>
+</div>
+
+<div class="content">
+    <h1>Глава 3. Как получить деньги на кошелек</h1>
+    <p>Для получения зарплаты или переводов от других пользователей мы используем цифровой доллар — <strong>USDT</strong>. Это стабильная валюта, курс которой всегда равен обычному доллару.</p>
+
+    <div class="step-card">
+        <h3>Виды пополнения</h3>
+        <p>На Binance есть два основных способа положить деньги на счет:</p>
+        <ul>
+            <li><strong>Ввод криптовалюты:</strong> Получение денег от работодателя или другого человека на ваш адрес.</li>
+            <li><strong>P2P-торговля:</strong> Покупка крипты за рубли/гривны/тенге с вашей банковской карты (разберем позже).</li>
+        </ul>
+    </div>
+
+    <div class="step-card">
+        <h3>Инструкция: Получение зарплаты (Сеть TRC-20)</h3>
+        <p>Чтобы вам могли прислать деньги, нужно предоставить отправителю адрес вашего кошелька. Действуйте по шагам:</p>
+        <ol>
+            <li>Зайдите в раздел <strong>"Кошелек"</strong> -> <strong>"Ввод"</strong> (Deposit).</li>
+            <li>Выберите монету <span class="highlight">USDT</span>.</li>
+            <li><strong>Важнейший шаг:</strong> Система предложит выбрать сеть. Выбирайте строго <span class="highlight">Tron (TRC20)</span>.</li>
+        </ol>
+
+        <img src="img/trc20.png" alt="Выбор сети TRC-20" class="screenshot">
+
+        <div class="network-box">
+            <strong>Почему именно TRC-20?</strong><br>
+            Это самая популярная сеть для выплат. Она быстрая (деньги приходят за 2-5 минут) и имеет самые низкие комиссии за перевод.
+        </div>
+    </div>
+
+    <div class="step-card">
+        <h3>Ваш адрес для получения</h3>
+        <p>После выбора сети появится ваш уникальный адрес кошелька. Он выглядит как длинный набор букв и цифр.</p>
+        <div class="address-box">Пример: T9yZB2W8... (ваш будет другим)</div>
+        <p>Скопируйте его и отправьте работодателю. Именно на этот адрес вам будет приходить зарплата.</p>
+        <p><em>Совет: Всегда нажимайте кнопку "Скопировать", не переписывайте адрес вручную, чтобы не допустить ошибку.</em></p>
+    </div>
+</div>
+
+</body>
+</html>
