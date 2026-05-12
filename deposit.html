@@ -3,35 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Пополнение и получение зарплаты — Binance</title>
+    <title>Получение оплаты — Binance</title>
     <style>
-        /* Стиль для увеличения картинок */
-.screenshot { cursor: pointer; transition: 0.3s; }
-.screenshot:hover { opacity: 0.8; }
-
-#modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background-color: rgba(0,0,0,0.9);
-    align-items: center; justify-content: center;
-}
-
-#modal img {
-    max-width: 90% !important;
-    max-height: 90% !important;
-    border: 3px solid #f3ba2f;
-    border-radius: 8px;
-}
-
-#modal-close {
-    position: absolute;
-    top: 20px; right: 30px;
-    color: #fff; font-size: 40px; font-weight: bold;
-    cursor: pointer;
-}
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; color: #1e2329; margin: 0; display: flex; background: #fafafa; }
         .sidebar { width: 280px; background: #1e2329; color: white; height: 100vh; position: fixed; padding: 20px; box-sizing: border-box; }
         .sidebar h2 { color: #f3ba2f; font-size: 20px; margin-bottom: 30px; text-transform: uppercase; }
@@ -42,23 +15,21 @@
         .sidebar .active { color: #f3ba2f; font-weight: bold; }
         
         .content { margin-left: 280px; padding: 60px; max-width: 900px; background: white; min-height: 100vh; }
-        h1 { font-size: 32px; color: #1e2329; margin-bottom: 30px; }
+        h1 { font-size: 32px; color: #1e2329; margin-bottom: 20px; }
         
         .step-card { background: #ffffff; border: 1px solid #eaecef; border-radius: 16px; padding: 30px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
         .step-card h3 { margin-top: 0; color: #1e2329; font-size: 22px; }
         
-        .network-box <div class="network-box" style="background: #fff5f5; border: 2px solid #ff4d4f; color: #1e2329;">
-    <strong style="color: #cf1322; font-size: 18px; text-transform: uppercase; display: block; margin-bottom: 10px;">
-        ВНИМАНИЕ: СТРОГО ВЫБИРАЙТЕ СЕТЬ TRC-20!
-    </strong>
-    <p style="margin: 0; font-weight: 500;">
-        ЭТО САМАЯ ПОПУЛЯРНАЯ СЕТЬ ДЛЯ ВЫПЛАТ. ЕСЛИ ВЫ ВЫБЕРЕТЕ ДРУГУЮ СЕТЬ, ДЕНЬГИ ПРОСТО НЕ ПРИДУТ И БУДУТ УТЕРЯНЫ НАВСЕГДА. ПРОВЕРЯЙТЕ НАЗВАНИЕ СЕТИ ПЕРЕД ТЕМ, КАК ОТПРАВИТЬ АДРЕС!
-    </p>
-</div>
-        .screenshot { width: 100%; max-width: 500px; border-radius: 12px; margin: 25px 0; border: 1px solid #ddd; display: block; }
+        .screenshot { width: 100%; max-width: 100%; height: auto; border-radius: 12px; margin: 20px 0; border: 1px solid #ddd; display: block; cursor: pointer; transition: 0.3s; }
+        .screenshot:hover { opacity: 0.8; }
         
         .highlight { color: #c99400; font-weight: bold; }
         .address-box { background: #f5f5f5; padding: 15px; border-radius: 8px; border: 1px dashed #adb5bd; font-family: monospace; font-size: 14px; color: #212529; }
+
+        /* Стили для модального окна увеличения */
+        #modal { display: none; position: fixed; z-index: 1000; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); align-items: center; justify-content: center; }
+        #modal img { max-width: 90% !important; max-height: 90% !important; border: 3px solid #f3ba2f; border-radius: 8px; }
+        #modal-close { position: absolute; top: 20px; right: 30px; color: #fff; font-size: 40px; font-weight: bold; cursor: pointer; }
     </style>
 </head>
 <body>
@@ -69,57 +40,36 @@
         <li><a href="index.html">1. Регистрация</a></li>
         <li><a href="security.html">2. Верификация</a></li>
         <li><a href="deposit.html" class="active">3. Получение оплаты</a></li>
-        <li><a href="withdraw.html">4. Вывод средств</a></li>
+        <li><a href="withdraw.html">4. Вывод на карту (P2P)</a></li>
     </ul>
 </div>
 
 <div class="content">
-    <h1>Глава 3. Как получить деньги на кошелек</h1>
-    <p>Для получения зарплаты или переводов от других пользователей мы используем цифровой доллар — <strong>USDT</strong>. Это стабильная валюта, курс которой всегда равен обычному доллару.</p>
-
-    <div class="step-card">
-        <h3>Виды пополнения</h3>
-        <p>На Binance есть два основных способа положить деньги на счет:</p>
-        <ul>
-            <li><strong>Ввод криптовалюты:</strong> Получение денег от работодателя или другого человека на ваш адрес.</li>
-            <li><strong>P2P-торговля:</strong> Покупка крипты за рубли/гривны/тенге с вашей банковской карты (разберем позже).</li>
-        </ul>
-    </div>
-
+    <h1>Глава 3. Как получить адрес для оплаты</h1>
+    
     <div class="step-card">
         <h3>Инструкция: Получение зарплаты (Сеть TRC-20)</h3>
-        <p>Чтобы вам могли прислать деньги, нужно предоставить отправителю адрес вашего кошелька. Действуйте по шагам:</p>
-        <ol>
-            <li>Зайдите в раздел <strong>"Кошелек"</strong> -> <strong>"Ввод"</strong> (Deposit).</li>
-            <li>Выберите монету <span class="highlight">USDT</span>.</li>
-            <li><strong>Важнейший шаг:</strong> Система предложит выбрать сеть. Выбирайте строго <span class="highlight">Tron (TRC20)</span>.</li>
-        </ol>
+        <p>Для того чтобы вам прислали деньги, вам нужно отправить плательщику ваш адрес кошелька. Перейдите в раздел <strong>Кошелек -> Ввод (Deposit)</strong>, выберите монету <strong>USDT</strong> и самое важное — выберите сеть <strong>Tron (TRC20)</strong>.</p>
+        
+        <img src="img/trc20.png" alt="Выбор сети" class="screenshot">
 
-        <img src="img/trc20.png" alt="Выбор сети TRC-20" class="screenshot">
-
-        <div class="network-box">
-            <strong>Почему именно TRC-20?</strong><br>
-            Это самая популярная сеть для выплат. Она быстрая (деньги приходят за 2-5 минут) и имеет самые низкие комиссии за перевод.
+        <div class="network-box" style="background: #fff5f5; border: 2px solid #ff4d4f; color: #1e2329; padding: 20px; border-radius: 12px; margin: 20px 0;">
+            <strong style="color: #cf1322; font-size: 18px; text-transform: uppercase; display: block; margin-bottom: 10px;">
+                ВНИМАНИЕ: СТРОГО ВЫБИРАЙТЕ СЕТЬ TRC-20!
+            </strong>
+            <p style="margin: 0; font-weight: 500;">
+                ЭТО САМАЯ ПОПУЛЯРНАЯ СЕТЬ ДЛЯ ВЫПЛАТ. ЕСЛИ ВЫ ВЫБЕРЕТЕ ДРУГУЮ СЕТЬ, ДЕНЬГИ ПРОСТО НЕ ПРИДУТ И БУДУТ УТЕРЯНЫ НАВСЕГДА. ПРОВЕРЯЙТЕ НАЗВАНИЕ СЕТИ ПЕРЕД ТЕМ, КАК ОТПРАВИТЬ АДРЕС!
+            </p>
         </div>
-    </div>
-
-    <div class="step-card">
-        <h3>Ваш адрес для получения</h3>
-        <p>После выбора сети появится ваш уникальный адрес кошелька. Он выглядит как длинный набор букв и цифр.</p>
-        <div class="address-box">Пример: T9yZB2W8... (ваш будет другим)</div>
-        <p>Скопируйте его и отправьте работодателю. Именно на этот адрес вам будет приходить зарплата.</p>
-        <p><em>Совет: Всегда нажимайте кнопку "Скопировать", не переписывайте адрес вручную, чтобы не допустить ошибку.</em></p>
     </div>
 </div>
 
-</body>
 <div id="modal" onclick="this.style.display='none'">
     <span id="modal-close">&times;</span>
     <img id="modal-img">
 </div>
 
 <script>
-    // Находим все картинки с классом screenshot
     document.querySelectorAll('.screenshot').forEach(image => {
         image.onclick = function() {
             document.getElementById('modal').style.display = 'flex';
@@ -127,4 +77,6 @@
         }
     });
 </script>
+
+</body>
 </html>
