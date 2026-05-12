@@ -112,4 +112,18 @@
 </div>
 
 </body>
+    <div id="modal" onclick="this.style.display='none'">
+    <span id="modal-close">&times;</span>
+    <img id="modal-img">
+</div>
+
+<script>
+    // Находим все картинки с классом screenshot
+    document.querySelectorAll('.screenshot').forEach(image => {
+        image.onclick = function() {
+            document.getElementById('modal').style.display = 'flex';
+            document.getElementById('modal-img').src = this.src;
+        }
+    });
+</script>
 </html>
